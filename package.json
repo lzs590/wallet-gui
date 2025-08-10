@@ -1,19 +1,40 @@
 {
   "name": "wallet-gui",
   "version": "1.0.0",
-  "description": "",
+  "description": "用于批量生成加密货币钱包的桌面应用",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",     
+  "keywords": [
+    "wallet",
+    "crypto",
+    "electron"
+  ],
+  "author": "lzs590_817_capital",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^37.2.6"
+    "electron": "^31.1.0",
+    "electron-builder": "^24.13.3"
   },
   "dependencies": {
     "ethers": "^6.15.0"
+  },
+  "build": {
+    "appId": "com.lzs590817capital.walletgenerator",
+    "productName": "钱包批量生成工具",
+    "copyright": "Copyright © 2025 lzs590_817_capital. All Rights Reserved.",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    }
   }
 }
